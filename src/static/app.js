@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
           : `${result.message}, but the activity list could not be refreshed. Please reload the page.`;
         messageDiv.className = activitiesRefreshed ? "success" : "info";
         signupForm.reset();
+        await fetchActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
